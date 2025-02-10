@@ -15,14 +15,13 @@ type SignupController struct {
 
 // 检测手机号是否已注册
 func (sc *SignupController) IsPhoneExist(c *gin.Context) {
-
 	request := requests.SignupPhoneExistRequest{}
 	if ok := requests.Validate(c, &request, requests.ValidateSingnupPhoneExist); !ok {
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"exist": user.IsEmailExist(request.Phone),
+		"exist": user.IsPhoneExist(request.Phone),
 	})
 }
 

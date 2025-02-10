@@ -3,7 +3,7 @@ package app
 import "gohub/pkg/config"
 
 func IsLocal() bool {
-	return config.Get("app.env") == "loca;"
+	return config.Get("app.env") == "local"
 }
 
 func IsProduction() bool {
